@@ -1,8 +1,9 @@
 ###############################################################
 # Customer Segmentation with RFM
 ###############################################################
+
 ###############################################################
-# İş Problemi (Business Problem)
+# (Business Problem)
 ###############################################################
 
 # An e-commerce company wants to segment its customers and
@@ -154,11 +155,3 @@ rfm[["rfm_segment", "recency", "frequency", "monetary"]].groupby("rfm_segment").
 rfm[rfm["rfm_segment"] == "cant_loose"].head()
 rfm[rfm["rfm_segment"] == "about_to_sleep"].head()
 rfm[rfm["rfm_segment"] == "new_customers"].head()
-
-
-# "Loyal Customers" sınıfına ait customer ID'leri seçerek excel çıktısını alınız
-new_df = pd.DataFrame()
-new_df["loyal_customers_id"] = rfm[rfm["rfm_segment"] == "loyal_customers"].index
-new_df.head()
-
-new_df.to_csv("loyal_customers.csv")
