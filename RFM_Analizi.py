@@ -45,24 +45,13 @@ df = df.copy()
 # Understanding Data Sets
 ###############################################################
 
-def check_df(dataframe, head=5):
-    print("##################### Shape #####################")
-    print(dataframe.shape)
-
-    print("##################### Types #####################")
-    print(dataframe.dtypes)
-
-    print("##################### Head #####################")
-    print(dataframe.head(head))
-
-    print("##################### Tail #####################")
-    print(dataframe.tail(head))
-
-    print("##################### NA #####################")
-    print(dataframe.isnull().sum())
-
-    print("##################### Quantiles #####################")
-    print(dataframe.quantile([0, 0.05, 0.50, 0.95, 0.99, 1]).T)
+def check_df(dataframe):
+    print(f"""
+        ##################### Shape #####################\n\n\t{dataframe.shape}\n\n
+        ##################### Types #####################\n\n{dataframe.dtypes}\n\n
+        ##################### Head #####################\n\n{dataframe.head(3)}\n\n
+        ##################### NA #####################\n\n{dataframe.isnull().sum()}\n\n
+        ##################### Quantiles #####################\n\n{dataframe.quantile([0, 0.05, 0.50, 0.95, 0.99, 1]).T}\n\n""")
 
 check_df(df)
 
